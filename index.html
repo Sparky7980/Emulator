@@ -13,48 +13,16 @@
             margin: 0;
             background-color: #f4f4f4;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
+        iframe {
             border: none;
-            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            max-width: 800px; /* You can adjust this */
+            max-height: 600px; /* You can adjust this */
         }
     </style>
 </head>
 <body>
-    <button onclick="openEmulator()">Open Emulator</button>
-
-    <script>
-        function openEmulator() {
-            // Open a blank page
-            var newWindow = window.open('about:blank', '_blank');
-
-            // Set the content of the new window
-            newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Android Emulator</title>
-                </head>
-                <body>
-                    <iframe 
-                        src="https://appetize.io/embed/b_xf4a5mz27uffeeyjr3dof4dhby?autoplay=true" 
-                        width="100%" 
-                        height="100%" 
-                        frameborder="0">
-                    </iframe>
-                </body>
-                </html>
-            `);
-
-            // Optionally, you can add a message in case the iframe fails to load
-            newWindow.document.close();
-        }
-    </script>
+    <iframe src="https://appetize.io/app/b_xf4a5mz27uffeeyjr3dof4dhby" allowfullscreen></iframe>
 </body>
 </html>
