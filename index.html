@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Emulator Embed</title>
+    <title>Embedded Android Emulator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <p>If the embed fails to load, <a href="https://appetize.io/embed/b_xf4a5mz27uffeeyjr3dof4dhby" target="_blank">click here</a> to open it in a new tab.</p>
+    <button onclick="openEmulator()">Open Emulator</button>
+
+    <script>
+        function openEmulator() {
+            // Open a blank page
+            var newWindow = window.open('about:blank', '_blank');
+
+            // Set the content of the new window
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Android Emulator</title>
+                </head>
+                <body>
+                    <iframe 
+                        src="https://appetize.io/embed/b_xf4a5mz27uffeeyjr3dof4dhby?autoplay=true" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0">
+                    </iframe>
+                </body>
+                </html>
+            `);
+
+            // Optionally, you can add a message in case the iframe fails to load
+            newWindow.document.close();
+        }
+    </script>
 </body>
 </html>
